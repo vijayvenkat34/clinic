@@ -28,5 +28,5 @@ jobs:
           port: ${{ secrets.EC2_PORT }}    # SSH port
           username: ${{ secrets.EC2_USERNAME }}  # SSH username
           key: ${{ secrets.SSH_PRIVATE_KEY }}     # SSH private key
-          local_path: 'target/your-app.jar'       # Path to your built JAR
-          remote_path: '/path/on/ec2/'             # Remote directory on EC2
+          local_path: 'target/clinic-0.0.1-SNAPSHOT.jar'       # Path to your built JAR
+          remote_path: '/home/ec2-user/dentalden/bin/'             # Remote directory on EC2
