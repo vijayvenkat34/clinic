@@ -25,9 +25,9 @@ jobs:
       - name: Deploy to EC2
         uses: easingthemes/ssh-deploy@v2
         with:
-          server: ${{ secrets.EC2_HOST }}  # EC2 instance IP or DNS
-          port: ${{ secrets.EC2_PORT }}    # SSH port
-          username: ${{ secrets.EC2_USERNAME }}  # SSH username
-          key: ${{ secrets.SSH_PRIVATE_KEY }}     # SSH private key
-          local_path: 'target/clinic-0.0.1-SNAPSHOT.jar'       # Path to your built JAR
-          remote_path: '/home/ec2-user/dentalden/bin/'             # Remote directory on EC2
+          REMOTE_HOST: ${{ secrets.EC2_HOST }}  # EC2 instance IP or DNS
+          REMOTE_PORT : ${{ secrets.EC2_PORT }}    # SSH port
+          REMOTE_USER : ${{ secrets.EC2_USERNAME }}  # SSH username
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}     # SSH private key
+          SOURCE : 'target/clinic-0.0.1-SNAPSHOT.jar'       # Path to your built JAR
+          TARGET : '/home/ec2-user/dentalden/bin/'             # Remote directory on EC2
