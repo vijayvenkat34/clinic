@@ -41,7 +41,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}     # SSH private key
           SOURCE: '/run/'
           TARGET: '/home/ec2-user/dentalden/bin/'            # Remote directory on EC2
-          SCRIPT_AFTER: /home/ec2-user/dentalden/bin/
+          SCRIPT_AFTER: /home/ec2-user/dentalden/bin/restart.sh
 
 #      - name: Executing remote ssh commands
 #        uses: msatbsx/ssh-and-run-your-script-on-remote-host@v0.1.1 # replace with current tag, avoid using main or latest
