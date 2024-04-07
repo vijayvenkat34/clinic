@@ -33,7 +33,7 @@ jobs:
           TARGET : '/home/ec2-user/dentalden/bin/'             # Remote directory on EC2
 
       - name: Deploy script files to EC2
-        uses: easingthemes/ssh-deploy@v2
+        uses: easingthemes/ssh-deploy@v5.0.3
         with:
           REMOTE_HOST: ${{ secrets.EC2_HOST }}  # EC2 instance IP or DNS
           REMOTE_PORT: ${{ secrets.EC2_PORT }}    # SSH port
