@@ -34,11 +34,11 @@ jobs:
 
       - name: Executing remote ssh commands
         uses: msatbsx/ssh-and-run-your-script-on-remote-host@v0.1.1 # replace with current tag, avoid using main or latest
-          id: runner # important, used below in steps.runner...
-          with:
-            host: ${{ secrets.EC2_HOST }}
-            user: ${{ secrets.EC2_USERNAME }}
-            key: ${{ secrets.SSH_PRIVATE_KEY }}
-            command: |
-              cd /home/ec2-user/dentalden/bin/
-              java -jar clinic-0.0.1-SNAPSHOT.jar
+        id: runner
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          user: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command: |
+            cd /home/ec2-user/dentalden/bin/
+            java -jar clinic-0.0.1-SNAPSHOT.jar
