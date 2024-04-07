@@ -1,4 +1,4 @@
-PID_RUN_KAAS=`ps -ef | grep 'com.dentalden.clinic.ClinicApplication' | grep /home/ec2-user/dentalden/bin | grep -v grep | awk '{print $2}'`
+PID_RUN_KAAS=`ps -ef | grep 'com.dentalden.clinic.ClinicApplication' | grep /home/ec2-user/dentalden/bin/ | grep -v grep | awk '{print $2}'`
 
 if [[ "" !=  "$PID_RUN_KAAS" ]]; then
    echo "run_kaas(PID:$PID_RUN_KAAS) is running"
