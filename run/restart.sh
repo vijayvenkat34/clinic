@@ -8,5 +8,5 @@ else
    echo "run_kaas service is not running"
 fi
 
-sh /run/run.sh
+sh run.sh
 echo "service is up and running"
