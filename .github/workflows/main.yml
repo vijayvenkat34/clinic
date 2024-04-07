@@ -31,3 +31,14 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}     # SSH private key
           SOURCE : 'target/clinic-0.0.1-SNAPSHOT.jar'       # Path to your built JAR
           TARGET : '/home/ec2-user/dentalden/bin/'             # Remote directory on EC2
+
+      - name: Executing remote ssh commands
+          uses: appleboy/ssh-action@v1.0.3
+          with:
+            host: ${{ secrets.EC2_HOST }}
+            username: ${{ secrets.EC2_USERNAME }}
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
+            port: ${{ secrets.EC2_PORT }}
+            script: |
+              cd /home/ec2-user/dentalden/bin/
+              java -jar clinic-0.0.1-SNAPSHOT.jar
